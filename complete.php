@@ -16,7 +16,7 @@
     <div class="confirmation">
         <table class="con-table">
             <tr>
-                <th>お問合せ内容</th>
+                <th>お問合せ項目</th>
                 <td><?php echo $inq["koumoku"]; ?></td>
             </tr>
             <tr>

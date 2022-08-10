@@ -24,19 +24,19 @@
                 <tr>
                     <th>お問合せ項目 <span>必須</span></th>
                     <td>
-                        <div class="radio">
-                            <?php foreach ($items as $item): ?>
+                        <?php foreach ($items as $item): ?>
+                            <div class="radio">
                                 <label>
                                     <input type="radio" name="koumoku" value="テキスト1">
                                     <?php echo $item; ?>
                                 </label>
-                            <?php endforeach; ?>
-                        </div>
+                            </div>
+                        <?php endforeach; ?>
                     </td>
                 </tr>
                 <tr>
                     <th>お問合せ内容 <span>必須</span></th>
-                    <td><textarea name="comment" cols="40" rows="10" placeholder="お問合せ内容を記入してください"></textarea></td>
+                    <td><textarea name="comment" cols="40" rows="10" placeholder="お問合せ内容を入力してください"></textarea></td>
                 </tr>
                 <tr>
                     <th>名前 <span>必須</span></th>
