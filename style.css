@@ -1,0 +1,59 @@
+/* お問合せフォーム */
+.inquiries form table {
+    width: 70%;
+    border-collapse: collapse;
+    margin: auto;
+}
+.inquiries form table tr th{
+    background: #c0c0c0;
+    border: solid 1px #000000;
+    text-align: center;
+    padding: 10px 0;
+    width: 200px;
+}
+.inquiries form table tr td {
+    border: solid 1px #000000;
+    text-align: center;
+    padding: 10px 0;
+    width: 200px;
+}
+.inquiries form table tr th span {
+    background: #ff3333;
+    padding: .3em .4em;
+    color: #ffffff;
+    margin-left: .5em;
+    font-size: .7em;
+}
+.inquiries form .btn{
+    text-align: center;
+    padding: 20px;
+}
+.inquiries form .btn .sub {
+    font-size: 20px;
+    color: #ffffff;
+    width: 100px;
+    height: 40px;
+    border-style: solid;
+    border-color: #ff3366;
+    background: #ff3366;
+}
+
+/* 確認画面 */
+.confirmation table {
+    width: 70%;
+    border-collapse: collapse;
+    margin: auto;
+}
+.confirmation table tr th {
+    background: #c0c0c0;
+    border: solid 1px #000000;
+    text-align: center;
+    padding: 10px 0;
+    width: 200px;
+}
+.confirmation table tr td {
+    border: solid 1px #000000;
+    text-align: center;
+    padding: 10px 0;
+    width: 200px;
+}
