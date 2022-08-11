@@ -36,27 +36,44 @@
                 </tr>
                 <tr>
                     <th>お問合せ内容 <span>必須</span></th>
-                    <td><textarea name="comment" cols="40" rows="10" placeholder="お問合せ内容を入力してください"></textarea></td>
+                    <td>
+                        <textarea name="comment" cols="40" rows="10" placeholder="お問合せ内容を入力してください"></textarea>
+                    </td>
                 </tr>
                 <tr>
                     <th>名前 <span>必須</span></th>
-                    <td><input type="text" name="name" style="width: 200px; height: 20px" placeholder="例：山田　太郎"></td>
+                    <td>
+                        <input type="text" name="name" style="width: 200px; height: 20px" placeholder="例：山田　太郎">
+                    </td>
                 </tr>
                 <tr>
                     <th>フリガナ <span>必須</span></th>
-                    <td><input type="text" name="hurigana" style="width: 200px; height: 20px" placeholder="例：ヤマダ　タロウ"></td>
+                    <td>
+                        <input type="text" name="hurigana" style="width: 200px; height: 20px" placeholder="例：ヤマダ　タロウ">
+                    </td>
                 </tr>
                 <tr>
                     <th>電話番号（半角） <span>必須</span></th>
-                    <td><input type="text" name="phonenumber" style="width: 200px; height: 20px" placeholder="例：00000000000（ハイフン不要）"></td>
+                    <td>
+                        <input type="text" name="phonenumber" style="width: 200px; height: 20px" placeholder="例：00000000000（ハイフン不要）">
+                        <?php if (isset($error["phonenumber"])): ?>
+                            <div class="error">
+                                <?php echo "電話番号を入力してください"; ?>
+                            </div>
+                        <?php endif; ?>
+                    </td>
                 </tr>
                 <tr>
                     <th>メールアドレス（半角） <span>必須</span></th>
-                    <td><input type="email" name="email" style="width: 200px; height: 20px" placeholder="例：example＠co.jp"></td>
+                    <td>
+                        <input type="email" name="email" style="width: 200px; height: 20px" placeholder="例：example＠co.jp">
+                    </td>
                 </tr>
                 <tr>
                     <th>会社名又は団体名　<span>必須</span></th>
-                    <td><input type="text" name="kaisyamei" style="width: 200px; height: 20px" placeholder="例：○○会社"></td>
+                    <td>
+                        <input type="text" name="kaisyamei" style="width: 200px; height: 20px" placeholder="例：○○会社">
+                    </td>
                 </tr>
                 <tr>
                     <th>役職名・部署名</th>
@@ -74,7 +91,7 @@
                             都道府県<br>
                             <select name="prefecture" size="1">
                                 <option value="-----">-----</option>
-                                <?php foreach ($prefectures as $prefecture): ?>
+                           <?php foreach ($prefectures as $prefecture): ?>
                                     <option value="<?php echo $prefecture; ?>"><?php echo $prefecture; ?></option>
                                 <?php endforeach ?>
                             </select>
