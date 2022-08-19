@@ -27,7 +27,7 @@
                         <?php foreach ($items as $item): ?>
                             <div class="radio">
                                 <label>
-                                    <input type="radio" name="koumoku" value="テキスト1">
+                                    <input type="radio" name="koumoku" value="<?php echo $item; ?>">
                                     <?php echo $item; ?>
                                 </label>
                             </div>
@@ -56,11 +56,6 @@
                     <th>電話番号（半角） <span>必須</span></th>
                     <td>
                         <input type="text" name="phonenumber" style="width: 200px; height: 20px" placeholder="例：00000000000（ハイフン不要）">
-                        <?php if (isset($error["phonenumber"])): ?>
-                            <div class="error">
-                                <?php echo "電話番号を入力してください"; ?>
-                            </div>
-                        <?php endif; ?>
                     </td>
                 </tr>
                 <tr>
