@@ -1,7 +1,3 @@
-<?php
-    $inq = $_POST;
-?>
-
 <!DOCTYPE html>
 <html lang="ja">
 <head>
