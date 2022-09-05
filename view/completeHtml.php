@@ -13,7 +13,7 @@
         <table class="con-table">
             <tr>
                 <th>お問合せ項目</th>
-                <td><?php echo $inq["koumoku"]; ?></td>
+                <td><?php echo $items[$inq["koumoku"]]; ?></td>
             </tr>
             <tr>
                 <th>お問合せ内容</th>
