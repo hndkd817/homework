@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +7,6 @@
     <title>確認</title>
     <link href="css/style.css" rel="stylesheet">
 </head>
-
 <body>
     <h1>お問合せ内容</h1>
     <div class="confirmation">
