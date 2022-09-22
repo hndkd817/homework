@@ -17,6 +17,10 @@
     padding: 10px 0;
     width: 200px;
 }
+.inquiries form table tr td p {
+    margin: .3em 0;
+    font-size: .8em;
+}
 .inquiries form table tr th span {
     background: #ff3333;
     padding: .3em .4em;
@@ -37,6 +41,7 @@
     border-color: #ff3366;
     background: #ff3366;
 }
+
 
 /* 確認画面 */
 .confirmation table {
