@@ -48,14 +48,14 @@ if (empty($inq["hurigana"])) {
 // 電話番号
 if (empty($inq["phonenumber"])) {
     $error["phonenumber"]["empty"] = "電話番号を入力してください";
-} elseif (!preg_match("/\d{10,11}/", $inq["phonenumber"])) {
+} elseif (!preg_match("/^\d{10,11}$/", $inq["phonenumber"])) {
     $error["phonenumber"]["hankaku"] = "半角数字で入力してください ※ハイフン不要";
 }
 
 // メールアドレス
 if (empty($inq["email"])) {
     $error["email"]["empty"] = "メールアドレスを入力してください";
-} elseif (!preg_match("/\w+([-+.]\w)*@\w+([-.]\w)*\.\w+([-.]\w)*/", $inq["email"])) {
+} elseif (!preg_match("/^\w+([-+.]\w)*@\w+([-.]\w)*\.\w+([-.]\w)*$/", $inq["email"])) {
     $error["email"]["hankaku"] = "正しいメールアドレスを入力してください";
 }
 
@@ -69,7 +69,7 @@ if (!empty($inq["address-number"]) || !empty($inq["prefecture"])  || $inq["prefe
     !empty($inq["sikutyouson"]) || !empty($inq["banti-biru"])) {
     // 郵便番号
     if (!empty($inq["address-number"])) {
-        if (!preg_match("/\d{7}/", $inq["address-number"])) {
+        if (!preg_match("/^\d{7}$/", $inq["address-number"])) {
             $error["address-number"]["error"] = "正しい郵便番号を入力してください";
         }
     } else {
@@ -102,7 +102,15 @@ if (!empty($inq["address-number"]) || !empty($inq["prefecture"])  || $inq["prefe
 if (count($error) > 0) {
     include($_SERVER["DOCUMENT_ROOT"] . "/../view/indexHtml.php");
 } else {
+    // DB接続
+    $db = new PDO("mysql:dbname=PETA_DB;host=localhost", "inquiries", "kou12345");
+    $stm = $db->prepare("insert into inquiries(koumoku, comment, name, 
+        hurigana, phonenumber, email, kaisyamei, yakusyooku, created_at, updated_at)
+        value(?, ?, ? ,?, ?, ?, ?, ?, ?, ?)");
+    $stm->execute([$inq["koumoku"], $inq["comment"], $inq["name"], $inq["hurigana"], $inq["phonenumber"],
+        $inq["email"], $inq["kaisyamei"], $inq["yakusyoku"], date("Y-m-d H:i:s"), date("Y-m-d H:i:s")]);
     include($_SERVER["DOCUMENT_ROOT"] . "/../view/completeHtml.php");
+    unset($stm, $db);
     unset($_SESSION['csrf_token']);
 }
 ?>
