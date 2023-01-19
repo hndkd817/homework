@@ -14,11 +14,10 @@ else {
     $pass = $_POST["pass"];
     try {
         $db = new PDO("mysql:dbname=PETA_DB;host=localhost", $user, $pass);
-        $count = $db->prepare("select count(id) from inquiries");
-        $count->execute();
         $stm = $db->prepare("select * from inquiries");
         $stm->execute();
         include($_SERVER["DOCUMENT_ROOT"] . "/../view/listHtml.php");
+        unset($stm, $db);
     }
     catch (Exception $e) {
         include($_SERVER["DOCUMENT_ROOT"] . "/../view/loginHtml.php");
