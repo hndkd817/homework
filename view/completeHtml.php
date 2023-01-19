@@ -13,44 +13,44 @@
         <table class="con-table">
             <tr>
                 <th>お問合せ項目</th>
-                <td><?= $items[$inq["koumoku"]] ?></td>
+                <td><?= htmlentities($items[$inq["koumoku"]], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
             </tr>
             <tr>
                 <th>お問合せ内容</th>
-                <td><?= $inq["comment"] ?></td>
+                <td><?= htmlentities($inq["comment"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
             </tr>
             <tr>
                 <th>名前</th>
-                <td><?= $inq["name"] ?></td>
+                <td><?= htmlentities($inq["name"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
             </tr>
             <tr>
                 <th>フリガナ</th>
-                <td><?= $inq["hurigana"] ?></td>
+                <td><?= htmlentities($inq["hurigana"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
             </tr>
             <tr>
                 <th>電話番号</th>
-                <td><?= $inq["phonenumber"] ?></td>
+                <td><?= htmlentities($inq["phonenumber"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
             </tr>
             <tr>
                 <th>メールアドレス</th>
-                <td><?= $inq["email"] ?></td>
+                <td><?= htmlentities($inq["email"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
             </tr>
             <tr>
                 <th>会社名又は団体名</th>
-                <td><?= $inq["kaisyamei"] ?></td>
+                <td><?= htmlentities($inq["kaisyamei"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
             </tr>
             <tr>
                 <th>役職名・部署</th>
-                <td><?= $inq["yakusyoku"] ?></td>
+                <td><?= htmlentities($inq["yakusyoku"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
             </tr>
             <tr>
                 <th>ご住所</th>
                 <td>
                     <?php if (!empty($inq["address-number"])) { ?>
-                        <?= $inq["address-number"] ?><br>
-                        <?= $prefectures[$inq["prefecture"]] ?><br>
-                        <?= $inq["sikutyouson"] ?><br>
-                        <?= $inq["banti-biru"] ?><br>
+                        <?= htmlentities($inq["address-number"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?><br>
+                        <?= htmlentities($prefectures[$inq["prefecture"]], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?><br>
+                        <?= htmlentities($inq["sikutyouson"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?><br>
+                        <?= htmlentities($inq["banti-biru"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?><br>
                     <?php } ?>
                 </td>
             </tr>

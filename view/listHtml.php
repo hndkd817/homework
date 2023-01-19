@@ -25,16 +25,16 @@
             </tr>
             <?php foreach ($stm as $datas) { ?>
                 <tr>
-                    <td><?= $datas["koumoku"] ?></td>
-                    <td><?= $datas["comment"] ?></td>
-                    <td><?= $datas["name"] ?></td>
-                    <td><?= $datas["hurigana"] ?></td>
-                    <td><?= $datas["phonenumber"] ?></td>
-                    <td><?= $datas["email"] ?></td>
-                    <td><?= $datas["kaisyamei"] ?></td>
-                    <td><?= $datas["yakusyooku"] ?></td>
-                    <td><?= $datas["created_at"] ?></td>
-                    <td><?= $datas["updated_at"] ?></td>
+                    <td><?= htmlentities($datas["koumoku"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
+                    <td><?= htmlentities($datas["comment"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
+                    <td><?= htmlentities($datas["name"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
+                    <td><?= htmlentities($datas["hurigana"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
+                    <td><?= htmlentities($datas["phonenumber"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
+                    <td><?= htmlentities($datas["email"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
+                    <td><?= htmlentities($datas["kaisyamei"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
+                    <td><?= htmlentities($datas["yakusyooku"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
+                    <td><?= htmlentities($datas["created_at"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
+                    <td><?= htmlentities($datas["updated_at"], ENT_QUOTES|ENT_SUBSTITUTE|ENT_HTML401, "UTF-8") ?></td>
                 </tr>
             <?php } ?>
         </table>
